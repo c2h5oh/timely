@@ -13,13 +13,13 @@ type Conf struct {
 }
 
 func (c *Conf) setDefaults() {
-	if c.AvrRequestTime == 0 {
+	if c.AvrRequestTime <= 0 {
 		c.AvrRequestTime = defaults.AvrRequestTime
 	}
-	if c.SampleInterval == 0 {
+	if c.SampleInterval <= 0 {
 		c.SampleInterval = defaults.SampleInterval
 	}
-	if c.InitialQueueDepth == 0 {
+	if c.InitialQueueDepth <= 0 {
 		c.InitialQueueDepth = defaults.InitialQueueDepth
 	}
 }
