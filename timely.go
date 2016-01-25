@@ -33,6 +33,7 @@ type throttler struct {
 }
 
 func (t *throttler) start() bool {
+	// To make sure queue is not being replaced
 	t.mux.RLock()
 	defer t.mux.RUnlock()
 
